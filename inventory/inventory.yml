@@ -1,0 +1,26 @@
+main:
+  children:
+    ipsec:
+
+ipsec:
+  hosts:
+    client:
+      ansible_host: 10.128.0.101
+      ansible_user: kali
+      ansible_password: kali
+      ansible_become_pass: kali
+      ip:
+        left: "10.128.0.101"
+        left_subnet: "10.128.0.101/24"
+        right: "10.128.0.100"
+        right_subnet: "10.128.0.100/24"
+    server:
+      ansible_host: 10.128.0.100
+      ansible_user: kali
+      ansible_password: kali
+      ansible_become_pass: kali
+      ip:
+        left: "10.128.0.100"
+        left_subnet: "10.128.0.100/24"
+        right: "10.128.0.101"
+        right_subnet: "10.128.0.101/24"
