@@ -5,22 +5,24 @@ main:
 ipsec:
   hosts:
     client:
+      psk: "RAhISGgZWd8hMzmRgAQ/KPahbbBxHL/G"
       ansible_host: 10.128.0.101
       ansible_user: kali
       ansible_password: kali
       ansible_become_pass: kali
       ip:
         left: "10.128.0.101"
-        left_subnet: "10.128.0.101/24"
-        right: "10.128.0.100"
-        right_subnet: "10.128.0.100/24"
+        left_subnet: "10.128.1.0/24"
+        right: "10.128.0.102"
+        right_subnet: "10.128.1.0/24"
     server:
-      ansible_host: 10.128.0.100
+      psk: "RAhISGgZWd8hMzmRgAQ/KPahbbBxHL/G"
+      ansible_host: 10.128.0.102
       ansible_user: kali
       ansible_password: kali
       ansible_become_pass: kali
       ip:
-        left: "10.128.0.100"
-        left_subnet: "10.128.0.100/24"
+        left: "10.128.0.102"
+        left_subnet: "10.128.1.0/24"
         right: "10.128.0.101"
-        right_subnet: "10.128.0.101/24"
+        right_subnet: "10.128.1.0/24"

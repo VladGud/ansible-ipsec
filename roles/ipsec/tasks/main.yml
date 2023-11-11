@@ -62,10 +62,6 @@
     jump: MASQUERADE
   become: true
 
-- name: IPSec | Generate PSK
-  ansible.builtin.shell: "head -c 24 /dev/urandom | base64"
-  register: psk
-
 - name: IPSec | Copy config files to hosts
   ansible.builtin.template:
     src: "ipsec.secrets.j2"
